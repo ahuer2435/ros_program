@@ -164,6 +164,15 @@ add_executable(talker src/talker/talker.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 add_dependencies(talker ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(listener_msg src/listener/listener_msg.cpp)
+target_link_libraries(listener_msg ${catkin_LIBRARIES})
+add_dependencies(listener_msg ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(talker_msg src/talker/talker_msg.cpp)
+target_link_libraries(talker_msg ${catkin_LIBRARIES})
+add_dependencies(talker_msg ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
 #############
 ## Install ##
 #############
