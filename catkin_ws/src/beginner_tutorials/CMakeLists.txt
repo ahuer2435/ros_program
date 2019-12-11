@@ -181,6 +181,10 @@ add_executable(talker_srv src/talker/talker_srv.cpp)
 target_link_libraries(talker_srv ${catkin_LIBRARIES})
 add_dependencies(talker_srv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
+add_executable(talker_para src/talker/talker_para.cpp)
+target_link_libraries(talker_para ${catkin_LIBRARIES})
+add_dependencies(talker_para ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 #############
 ## Install ##
 #############

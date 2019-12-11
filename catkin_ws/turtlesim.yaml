@@ -1,0 +1,12 @@
+background_b: 0
+background_g: 0
+background_r: 255
+rosdistro: 'kinetic
+
+  '
+roslaunch:
+  uris: {host_yq_inspiron_5537__38519: 'http://yq-Inspiron-5537:38519/'}
+rosversion: '1.12.14
+
+  '
+run_id: eede865c-18e6-11ea-890b-ac7ba10ad32c
