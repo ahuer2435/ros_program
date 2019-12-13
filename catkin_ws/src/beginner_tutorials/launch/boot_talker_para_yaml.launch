@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<launch>
+  <node pkg="beginner_tutorials" type="talker_para" respawn="false" name="talker_para" output="screen">
+    <rosparam file="$(find beginner_tutorials)/launch/talker_para.yaml" command="load" />
+  </node>
+</launch>
