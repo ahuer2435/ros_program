@@ -5,7 +5,7 @@
 //重定义SimpleActionServer类型为Server.
 typedef actionlib::SimpleActionServer<beginner_tutorials::FibonacciAction> Server;
 
-//ActionServer的回调函数，类似服务的回调函数。
+//actionlib服务端的回调函数，类似服务的回调函数。
 void executeCB(const beginner_tutorials::FibonacciGoalConstPtr &goal, Server *as)
 {
   beginner_tutorials::FibonacciFeedback feedback; //定义反馈队列
@@ -42,9 +42,9 @@ int main(int argc, char** argv)
 {
   ros::init(argc, argv, "fibonacci_server");
   ros::NodeHandle n;
-  //创建一个ActionServer:server.
+  //创建一个actionlib服务端:server.
   Server server(n, "fibonacci", boost::bind(&executeCB, _1, &server), false);
-  //启动server.
+  //启动actionlib服务端.
   server.start();
   ros::spin();
   return 0;
