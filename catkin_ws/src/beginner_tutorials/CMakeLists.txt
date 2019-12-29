@@ -14,6 +14,7 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   actionlib_msgs
   actionlib
+  pluginlib
 )
 
 ## System dependencies are found with CMake's conventions
@@ -196,6 +197,10 @@ add_dependencies(fibonacci_client ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_E
 add_executable(fibonacci_server src/fibonacci/fibonacci_server.cpp)
 target_link_libraries(fibonacci_server ${catkin_LIBRARIES})
 add_dependencies(fibonacci_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+add_executable(plugin_use src/plugin_use/plugin_use.cpp)
+target_link_libraries(plugin_use ${catkin_LIBRARIES})
+add_dependencies(plugin_use ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 #############
 ## Install ##

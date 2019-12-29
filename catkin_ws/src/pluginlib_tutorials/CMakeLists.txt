@@ -122,7 +122,7 @@ include_directories(
 ## Declare a C++ library
 add_library(polygon_plugins 
    src/polygon_plugins.cpp
-)
+) 
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -150,7 +150,7 @@ add_library(polygon_plugins
 # )
 
 add_executable(polygon_loader src/polygon_loader.cpp)
-target_link_libraries(polygon_loader ${catkin_LIBRARIES})
+target_link_libraries(polygon_loader ${catkin_LIBRARIES}) 
 
 #############
 ## Install ##
