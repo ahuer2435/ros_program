@@ -1,5 +1,5 @@
-#ifndef PLUGINLIB_TUTORIALS__POLYGON_PLUGINS_H_
-#define PLUGINLIB_TUTORIALS__POLYGON_PLUGINS_H_
+#ifndef PLUGINLIB_TUTORIALS_POLYGON_PLUGINS_H_
+#define PLUGINLIB_TUTORIALS_POLYGON_PLUGINS_H_
 #include <pluginlib_tutorials/polygon_base.h>
 #include <cmath>
 
