@@ -8,7 +8,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "plugin_use");  //初始化ros，并命令节点名。
     ros::NodeHandle n;        //初始化节点，调用ros api接口句柄。
     beginner_tutorials::Area area;
-    ros::Publisher plugin_pub = n.advertise<beginner_tutorials::Area>("plugin_msg", 1);
+    ros::Publisher plugin_pub = n.advertise<beginner_tutorials::Area>("plugin_msg", 1,true);
 
     pluginlib::ClassLoader<polygon_base::RegularPolygon> poly_loader("pluginlib_tutorials", "polygon_base::RegularPolygon");
 
