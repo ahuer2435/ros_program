@@ -1,0 +1,2 @@
+float64 triangleArea
+float64 squareAresa
