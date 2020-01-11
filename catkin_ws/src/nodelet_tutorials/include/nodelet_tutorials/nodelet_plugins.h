@@ -1,5 +1,7 @@
+#ifndef NODELET_PLUGINS_H_
+#define NODELET_PLUGINS_H_
+
 #include <ros/ros.h>
-#include <pluginlib/class_list_macros.h>
 #include <nodelet/nodelet.h>
 #include <std_msgs/Float64.h>
 
@@ -25,5 +27,6 @@ private:
   ros::Publisher pub_;
 };
 
-PLUGINLIB_EXPORT_CLASS(nodelet_tutorials::nodeletTalker, nodelet::Nodelet)
 }
+
+#endif

@@ -116,7 +116,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -150,7 +150,7 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-add_library(nodelet_tutorials src/nodelet_talker.cpp)
+add_library(nodelet_plugins src/nodelet_plugins.cpp)
 
 #############
 ## Install ##
