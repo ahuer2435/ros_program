@@ -150,7 +150,7 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-add_library(nodelet_plugins src/nodelet_plugins.cpp)
+add_library(${PROJECT_NAME} src/nodelet_plugins.cpp)
 
 #############
 ## Install ##
