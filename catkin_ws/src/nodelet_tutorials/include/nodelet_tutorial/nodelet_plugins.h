@@ -1,0 +1,83 @@
+#ifndef PLUGINLIB_TUTORIALS_POLYGON_PLUGINS_H_
+#define PLUGINLIB_TUTORIALS_POLYGON_PLUGINS_H_
+
+#include <ros/ros.h>
+#include <pluginlib/class_list_macros.h>
+#include <nodelet/nodelet.h>
+#include <std_msgs/Float64.h>
+
+namespace nodelet_tutorials
+{
+class nodeletTalker : public nodelet::Nodelet
+{
+public:
+  nodeletTalker()
+  {}
+
+private:
+  virtual void onInit()
+  {
+    ros::NodeHandle& private_nh = getPrivateNodeHandle();
+    pub_ = private_nh.advertise<std_msgs::Float64>("out", 1,true);
+    std_msgs::Float64Ptr output(new std_msgs::Float64());
+    output->data = 10;
+    NODELET_DEBUG("publish data %f", output->data);
+    pub_.publish(output);    
+  }
+
+  ros::Publisher pub_;
+};
+
+}
+
+
+#include <pluginlib_tutorials/polygon_base.h>
+#include <cmath>
+
+namespace polygon_plugins
+{
+  class Triangle : public polygon_base::RegularPolygon
+  {
+    public:
+      Triangle(){}
+
+      void initialize(double side_length)
+      {
+        side_length_ = side_length;
+      }
+
+      double area()
+      {
+        return 0.5 * side_length_ * getHeight();
+      }
+
+      double getHeight()
+      {
+        return sqrt((side_length_ * side_length_) - ((side_length_ / 2) * (side_length_ / 2)));
+      }
+
+    private:
+      double side_length_;
+  };
+
+  class Square : public polygon_base::RegularPolygon
+  {
+    public:
+      Square(){}
+
+      void initialize(double side_length)
+      {
+        side_length_ = side_length;
+      }
+
+      double area()
+      {
+        return side_length_ * side_length_;
+      }
+
+    private:
+      double side_length_;
+
+  };
+};
+#endif

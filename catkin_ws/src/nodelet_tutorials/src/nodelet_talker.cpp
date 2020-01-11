@@ -3,7 +3,7 @@
 #include <nodelet/nodelet.h>
 #include <std_msgs/Float64.h>
 
-namespace nodelet_tutorial
+namespace nodelet_tutorials
 {
 class nodeletTalker : public nodelet::Nodelet
 {
@@ -15,15 +15,15 @@ private:
   virtual void onInit()
   {
     ros::NodeHandle& private_nh = getPrivateNodeHandle();
-    pub = private_nh.advertise<std_msgs::Float64>("out", 1,true);
+    pub_ = private_nh.advertise<std_msgs::Float64>("out", 1,true);
     std_msgs::Float64Ptr output(new std_msgs::Float64());
     output->data = 10;
     NODELET_DEBUG("publish data %f", output->data);
-    pub.publish(output);    
+    pub_.publish(output);    
   }
 
-  ros::Publisher pub;
+  ros::Publisher pub_;
 };
 
-PLUGINLIB_EXPORT_CLASS(nodelet_tutorial::nodeletTalker, nodelet::Nodelet)
+PLUGINLIB_EXPORT_CLASS(nodelet_tutorials::nodeletTalker, nodelet::Nodelet)
 }

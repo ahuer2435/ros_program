@@ -7,6 +7,6 @@
   </node>
 
   <node pkg="nodelet" type="nodelet" name="node_loader0"
-        args="load nodelet_tutorial/nodeletTalker $(arg manager_name)" >
+        args="load nodelet_tutorials/nodeletTalker $(arg manager_name)" >
   </node>      
 </launch>
